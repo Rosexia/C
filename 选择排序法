@@ -1,0 +1,110 @@
+#include<stdio.h>
+int main()
+{
+	int N;
+	scanf("%d",&N);  //int a[N],i,j;  为什么这两句顺序不能反，要一个一个输入？ 
+	int a[N],i,j;   //scanf("%d",&N);
+	for(i=0;i<N;i++)
+	   scanf("%d",&a[i]);
+	for(i=0;i<N-1;i++)
+	{
+		for(j=i+1;j<N;j++)
+		{
+			if(a[i]>a[j])
+			{
+				int t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+	   }  
+	for (i=0;i<N;i++) 
+	    printf("%d ",a[i]);
+		return 0;   
+}
+
+
+----------------------------------------------------
+#include<stdio.h>
+void se(int p[],int n);
+void se(int p[],int n)
+{
+	int i,j,t;
+	for(i=0;i<n;i++)  //选择排序法的另一种写法
+	{
+		for(j=0;j<n;j++)
+		{
+			if(p[i]<p[j])  //小于
+			{
+				t=p[i];
+				p[i]=p[j];
+				p[j]=t;
+		    }
+		}
+	}
+}
+int main ()
+{
+	int n,i;
+	scanf("%d\n",&n);
+	int a[n];
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	se(a,n);
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+		}
+	/*if(i!=(n-1))
+        {
+            printf(" ");     //这是为了保证最后没有空格
+        }*/
+    return 0;
+}
+
+------------------------------------------------------------
+#include<stdio.h>
+void se(int *p,int n);
+void se(int *p,int n)
+{
+	int i,j,t;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(*(p+i)>p[j])
+			{
+				int t=*(p+i);
+				*(p+i)=p[j];
+				p[j]=t;
+			}
+		}
+	}
+}
+int main ()
+{
+	int n,i;
+	scanf("%d\n",&n);
+	int a[n];
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",a+i);  //&a[i]==a+i
+	}
+	se(a,n);
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+		}
+	if(i!=(n-1))
+        {
+            printf(" ");     //这是为了保证最后没有空格
+        }
+    return 0;
+	
+}
+
+
+
+
