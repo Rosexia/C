@@ -1,0 +1,14 @@
+//整除、循环的概念 从键盘输入一个整数，输出该数是几位数。
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d",&a);
+    while(a!=0)
+    {
+        a/=10;
+        b++;
+    }
+    printf("%d",b);
+    return 0;
+}
