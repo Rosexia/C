@@ -1,0 +1,32 @@
+以下选项中不能作为合法常量的是：(B )。
+
+A.
+1.234e04
+
+B.
+1.234e0.4
+
+C.
+1.234e+4
+
+D.
+1.234e0
+
+
+C语言中规定，不同类型的数据占用存储空间的长度是不相同的。下列各数据中满足占用存储空间从小到大顺序排列的是（D）。
+
+
+A.
+short int, char, float, double
+
+
+B.
+char, float, int, double
+
+
+C.
+int, unsigned char, long int, float
+
+
+D.
+char, int, float, double
