@@ -1,0 +1,29 @@
+	//判定素数 知识点：循环 输入一个正整数,判定其是否是素数；
+
+//example1: input: 15 output: 0
+
+//example2 input: 17 output: 1
+//https://blog.csdn.net/zhao2chen3/article/details/82955794
+
+  #include<stdio.h>
+	int main()
+	{
+		int x,i;
+		scanf("%d",&x);
+		if(x<2)
+		{
+			printf("error");
+			return 0;
+		 } 
+		 int flag=1;
+		for(i=2;i<x;i++)
+		{
+		    if(x%i==0)
+		 	{
+		 		flag=0;  
+				break;
+			}
+        }
+        printf("%d",flag);		 
+		return 0;
+	 } 
