@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include <math.h>
+int f(int n)
+{
+	if(n==1||n==2)
+		return 1;
+	else if (n>=2) 
+		return f(n-2)+f(n-1) ;
+}
+
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	printf("%d",f(n));
+	return 0;
+ }
+ 
+ //------------------------------------------
+ /*
+ 本题要求实现求Fabonacci数列项的函数。Fabonacci数列的定义如下：
+f(n)=f(n−2)+f(n−1) (n≥2)，其中f(0)=0，f(1)=1。
+题目保证输入输出在长整型范围内。建议用递归实现.
+*/
+//-----------------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+int fab(int n);
+int f[200]=1;
+int main()
+{  
+    int answer;
+    int n;
+    scanf("%d",&n);
+    f[0]=1;f[1]=2;     
+
+    answer = fab(n);    
+    
+    printf("%d\n",answer);  
+    return 0;
+}
+
+ int fab(int n)
+{
+ int i,k;
+ if(n==1||n==2)
+ {
+  k=1;
+  return k;
+ }
+ if(n>=3)
+ {
+  for(i=2;i<n;i++)
+  {
+   f[i]=f[i-1]+f[i-2];
+  }
+  k=f[i-1];
+  return k;
+ }
+}
+ /*
+ 斐波那契在《计算之书》中提出了一个有趣的兔子问题：
+若一对成年兔子每个月恰好生下一对小兔子(一雌一雄)。
+在年初时，只有一对小兔子。
+在第一个月结束时，他们成长为成年兔子，并且第二个月结束时，这对成年兔子将生下一对小兔子。
+这种成长与繁殖的过程会一直持续下去，并假设生下的小兔子都不会死，那么一年之后共可有多少对小兔子？
+输入样例:
+20
+输出样例:
+6765
+*/
